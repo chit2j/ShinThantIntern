@@ -3,3 +3,4 @@ asyncio
 streamlit
 numpy
 keras
+tensorflow
