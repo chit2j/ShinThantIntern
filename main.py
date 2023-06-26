@@ -16,7 +16,7 @@ from keras.models import model_from_json
 
 #load face
 try:
-    face_cascade = cv2.CascadeClassifier('cascade/haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 except Exception:
     st.write("Error loading cascade classifiers")
 
@@ -32,7 +32,7 @@ emotions= {0: "Angry", 1: "Disgust", 2: "Fear", 3: "Happy", 4: "Neutral", 5: "Sa
 
 
 # Load json and create model
-json_file = open('model/emotion_model.json', 'r')
+json_file = open('emotion_model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 model = model_from_json(loaded_model_json)
@@ -42,7 +42,7 @@ model = model_from_json(loaded_model_json)
 
 
 # Load into new model
-model.load_weights('model/emotion_model.h5')
+model.load_weights('emotion_model.h5')
 print("Loaded model from disk")
 
 
